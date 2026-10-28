@@ -32,7 +32,7 @@
 
 ## 快速开始
 
-1. [下载本仓库](https://github.com/lxbsdsg/yushen-skills/archive/refs/heads/main.zip)，将需要的技能**整个目录**放入工具支持的技能目录，例如项目的 `.agents/skills/`；保留其中的 `references/`、`scripts/` 和 `assets/`（若有）。
+1. [下载本仓库](https://github.com/YuShenLiu06/yushen-skills/archive/refs/heads/main.zip)，将需要的技能**整个目录**放入工具支持的技能目录，例如项目的 `.agents/skills/`；保留其中的 `references/`、`scripts/` 和 `assets/`（若有）。
 2. 在任务中明确要求助手读取对应文件，例如：
 
    ```text
