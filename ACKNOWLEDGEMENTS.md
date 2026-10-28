@@ -1,5 +1,19 @@
 # 来源与整理边界
 
+## 2026-10-28：Claude Code 生态接入
+
+`yushen-pr-cycle` 的会话循环使用 Anthropic 官方 [ralph-loop](https://github.com/anthropics/claude-plugins-official/tree/f8c5e7a1dcb71b10cb74586224b5401f3de5db28/plugins/ralph-loop) 1.0.1，固定完整源码提交，通过 Claude Code 的本地插件机制加载。复用其 setup、Stop hook 和取消命令，未在本集合复制或重写循环引擎；固定运行时由准备脚本另行取得并存放在 Git 忽略目录。官方插件源码和随附许可保持原样，不改标为本集合 MIT。
+
+Windows hook 依赖 Git Bash 与 [jq](https://github.com/jqlang/jq)，jq 由官方固定发行包取得并校验，具体版本及哈希见 [循环运行锁定文件](skills/yushen-pr-cycle/assets/claude-runtime.lock.json)。这些外部运行时及其许可不由本集合重新授权；分发运行时须另行遵守其实际许可。本次自有内容是插件入口、准备/检查/启动适配和流程约束，不声称官方循环、Claude Code 或 Vibe Kanban 为原创。
+
+执行入口依据 [Claude Code 插件文档](https://code.claude.com/docs/en/plugins.md)、[插件 CLI](https://code.claude.com/docs/en/plugins/cli-reference.md) 和 [MCP 文档](https://code.claude.com/docs/en/mcp.md)。Claude Code 本身由用户另行安装并登录，运行模型和工作者受其账户、授权及费用约束；不会因本集合采用 MIT 而获得额外服务使用权。
+
+## 2026-10-28：PR cycle 固定看板流程
+
+`yushen-pr-cycle` 的看板与隔离工作会话接入 [BloopAI/vibe-kanban](https://github.com/BloopAI/vibe-kanban)，固定 npm `0.0.166` / [源码提交 0c91b08](https://github.com/BloopAI/vibe-kanban/tree/0c91b082357972dbcfd79c93ab8d899b78181f1a)。已核对该版本的任务、项目、MCP、worktree 和看板源码以及 npm/CDN 发行信息。根许可证为 Apache-2.0；该项目及其二进制不随本集合分发，也不改标 MIT。
+
+本次新增的是批次适配脚本、清单模板、状态映射和调度/验收规则，未复制上游实现。新版已退休本地 project 看板，故不使用 `latest`；后续更换运行器应重新核对接口和许可。具体来源链接与固定版本见 [接入说明](skills/yushen-pr-cycle/references/kanban.md) 和 [版本记录](skills/yushen-pr-cycle/assets/runtime.lock.json)。
+
 本集合按 YuShen 的明确要求整理、适配，不将通用设计原则、第三方方法或通用学习技能声明为用户原创。来源信息集中于此，技能执行无需加载本文件或许可文本。
 
 ## 实际使用的源文件

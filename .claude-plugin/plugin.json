@@ -1,0 +1,6 @@
+{
+  "name": "yushen-skills",
+  "version": "1.0.0",
+  "description": "Yushen development skills, including a Claude Code PR cycle with Vibe Kanban.",
+  "author": {"name": "YuShen"}
+}

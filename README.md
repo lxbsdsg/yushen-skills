@@ -21,7 +21,7 @@
 | --- | --- |
 | 死代码、重复实现与复用 | [代码审查](skills/yushen-code-quality-review/README.md) |
 | 权限、隔离、数据与恢复 | [安全审查](skills/yushen-security-review/README.md) |
-| 开发、自证、审查与验收 | [开发协作](skills/yushen-pr-cycle/README.md) |
+| Claude Code 循环、看板、批量并发与验收 | [开发协作](skills/yushen-pr-cycle/README.md) |
 | 安装、授权与日常操作 | [产品交互](skills/yushen-product-ux/README.md) |
 | 真实下载、安装与产物验收 | [产物验收](skills/yushen-release-acceptance/README.md) |
 | 精修文档并保留关键信息 | [文档精修](skills/doc-refine/README.md) |
@@ -32,7 +32,7 @@
 
 ## 快速开始
 
-1. [下载本仓库](https://github.com/YuShenLiu06/yushen-skills/archive/refs/heads/main.zip)，将需要的技能**整个目录**放入工具支持的技能目录，例如项目的 `.agents/skills/`；保留其中的 `references/`。
+1. [下载本仓库](https://github.com/YuShenLiu06/yushen-skills/archive/refs/heads/main.zip)，将需要的技能**整个目录**放入工具支持的技能目录，例如项目的 `.agents/skills/`；保留其中的 `references/`、`scripts/` 和 `assets/`（若有）。
 2. 在任务中明确要求助手读取对应文件，例如：
 
    ```text
@@ -41,6 +41,14 @@
    ```
 
 无需一次加载全部技能。仅放置文件或写一个链接不等于已加载。
+
+### Claude Code
+
+本仓库也可作为本地插件加载，在仓库根目录运行 `claude --plugin-dir .`，技能命令使用 `/yushen-skills:技能名`。该方式只加载本集合，不会自动安装外部运行器或启动 AI 循环。
+
+需要 **PR cycle 的真实循环、看板和并发** 时，保留完整仓库并按 [启动说明](skills/yushen-pr-cycle/README.md#启动) 操作：复用官方 Ralph Loop 和 Vibe Kanban，默认最多 3 个 Claude 工作者，不另建调度器。外部运行时只准备到本地忽略目录，不修改用户全局插件配置。
+
+开发协作按 [P0～P3 变更风险与审批等级](skills/yushen-pr-cycle/SKILL.md#变更风险与审批等级) 推进：每 PR 一份计划，独立 AI 审查最多三轮；P0 单独方案审批，P1/P2 人类审核，P3 自动开发、审查和创建 PR，合并仍由人工决定。合并及人工批准完成后复盘，规则候选经核对和用户确认后沉淀。
 
 ## 使用边界
 
